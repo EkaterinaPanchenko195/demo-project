@@ -16,6 +16,23 @@
 }
 
 .section-demo {
+  opacity: 1;
+  background-color: rgba(240, 244, 252, 1);
+  display: flex;
+  justify-content: space-between;
+  height: 455px;
+  @media (max-width: 1439px) {
+    flex-direction: column;
+    justify-content: center;
+    height: 586px;
+  }
+  @media (max-width: 767px) {
+    height: 482px;
+  }
+}
+
+.section-demo_opacity {
+  opacity: 0.2;
   background-color: rgba(240, 244, 252, 1);
   display: flex;
   justify-content: space-between;
@@ -149,7 +166,11 @@
 }
 
 .modal {
-  display: none; // поменять на display: flex
+  display: none;
+}
+
+.modal_active {
+  display: flex;
   background-color: rgba(240, 244, 252, 1);
   width: 500px;
   padding: 24px;

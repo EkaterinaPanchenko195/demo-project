@@ -193,3 +193,37 @@ const modalButtonSignUp = createElement({
   },
   place: modalForm,
 });
+
+// ИЗМЕНЯЕМ СОСТОЯНИЕ МОДАЛЬНОГО ОКНА
+
+const changingModalState = () => {
+  buttonDemo.addEventListener("click", () => {
+    modal.classList.toggle("modal_active");
+    section.classList.toggle("section-demo_opacity");
+  });
+};
+changingModalState();
+
+// ИЗВЛЕКАЕМ ДАННЫЕ ИЗ ФОРМЫ
+
+const getFormDataModal = () => {
+  modalForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formData = new FormData(modalForm);
+    const contact = formData.get("contact");
+    const password = formData.get("password");
+    const savePassword = formData.get("savePassword");
+    console.log({ contact, password, savePassword });
+  });
+};
+getFormDataModal();
+
+// закрываем по нажатию на иконку x
+
+const closeModal = () => {
+  modalButtonCLose.addEventListener("click", () => {
+    modal.classList.toggle("modal_active");
+    section.classList.toggle("section-demo_opacity");
+  });
+};
+closeModal();
